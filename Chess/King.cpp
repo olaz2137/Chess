@@ -1,6 +1,5 @@
 #include "King.h"
 #include "PieceTexture.h"
-#include "InputHandler.h"
 #include "Game.h"
 #include "BoardRect.h"
 
@@ -18,29 +17,17 @@ void King::draw(SDL_Renderer* renderer)
 
 void King::update()
 {
-//	handleInput();
 	Piece::update();
+	// ograncizenie ruchów króla u¿ywaj¹c wektorów
+	int square = BoardRect::side_len;
+	if (m_prev_position.getX()!= -1 && m_prev_position.getY() != -1  && (abs((m_position-m_prev_position).getX())>square || abs((m_position - m_prev_position).getY()) > square) ) {
+		m_position.setX(m_prev_position.getX());
+		m_position.setY(m_prev_position.getY());
+
+		m_prev_position.setX(-1);
+		m_prev_position.setY(-1);
+	}
 }
 
-/*int x = -1, y = -1, mx = -1, my = -1; //wspó³rzêdne obiektu i myszki przed wciœniêciem lewego przycisku
-void King::handleInput()
-{
-	int square = BoardRect::side_len;
-	Vector2D *vec = TheInputHandler::Instance()->getMousePosition(); 
-	if (!TheInputHandler::Instance()->getMouseButtonLeft()) { 
-		x = m_position.getX();
-		y = m_position.getY();
-		mx = vec->getX();
-		my = vec->getY();
-	}
-	if (TheInputHandler::Instance()->getMouseButtonLeft() && mx>x&& mx <x+square && my >y && my < y + square) {
-//		m_position = *vec;
-		for (int i = 0; i < 8; i++) {
-				if (vec->getX() > i * square && vec->getX() < (i + 1) * square) m_position.setX(i * square);
-				if (vec->getY() > i * square && vec->getY() < (i + 1) * square) m_position.setY(i * square);
-			}
 
-	}
-
-}*/
 

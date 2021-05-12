@@ -12,7 +12,7 @@ public:
     void setX(int x) { m_x = x; }
     void setY(int y) { m_y = y; }
 
-    int length() { return sqrt(m_x * m_x + m_y * m_y); }
+    double length() { return sqrt(m_x * m_x + m_y * m_y); }
 
     Vector2D operator+(const Vector2D& v2) const {
         return Vector2D(m_x + v2.m_x, m_y + v2.m_y);

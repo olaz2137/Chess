@@ -6,7 +6,7 @@
 
 
 Piece::Piece(const LoaderParams* params):
-	PieceBase(params), m_position(params->getX(), params->getY()), m_velocity(0,0)
+	PieceBase(params), m_position(params->getX(), params->getY()), m_prev_position(-1,-1)
 {
 	m_color = params->getColor();
 	m_texture = params->getTexture();
@@ -30,7 +30,8 @@ void Piece::update() {
 		my = vec->getY();
 	}
 	if (TheInputHandler::Instance()->getMouseButtonLeft() && mx > x && mx <x + square && my >y && my < y + square) {
-		//		m_position = *vec;
+		m_prev_position.setX(x);
+		m_prev_position.setY(y);
 		for (int i = 0; i < 8; i++) {
 			if (vec->getX() > i * square && vec->getX() < (i + 1) * square) m_position.setX(i * square);
 			if (vec->getY() > i * square && vec->getY() < (i + 1) * square) m_position.setY(i * square);
