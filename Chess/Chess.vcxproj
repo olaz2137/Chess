@@ -176,7 +176,6 @@
     <ClInclude Include="LoaderParams.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="Piece.h" />
-    <ClInclude Include="PieceBase.h" />
     <ClInclude Include="PieceTexture.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />

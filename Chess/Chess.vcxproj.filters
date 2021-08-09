@@ -65,9 +65,6 @@
     <ClInclude Include="LoaderParams.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="PieceBase.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="InputHandler.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>

@@ -55,39 +55,39 @@ bool Game::init(const std::string& window_title, int width, int height) {
 	PieceTexture::loadImages();
 	int square = BoardRect::side_len;
 	// inicjowanie pozycji pocz¹tkowych bierek
-	black_king = new King(new LoaderParams(1, 4* square, 0));
-	black_queen = new Queen(new LoaderParams(1, 3 * square, 0));
-	black_rook = new Rook(new LoaderParams(1, 0, 0));
-	black_rook2 = new Rook(new LoaderParams(1, 7 * square,0));
-	black_bishop = new Bishop(new LoaderParams(1, 2*square, 0));
-	black_bishop2 = new Bishop(new LoaderParams(1, 5* square, 0));
-	black_knight = new Knight(new LoaderParams(1, square, 0));
-	black_knight2 = new Knight(new LoaderParams(1, 6 * square, 0));
-	black_pawn = new Pawn(new LoaderParams(1, 0, square));
-	black_pawn2 = new Pawn(new LoaderParams(1, square , square));
-	black_pawn3 = new Pawn(new LoaderParams(1, square * 2, square));
-	black_pawn4 = new Pawn(new LoaderParams(1, square * 3, square));
-	black_pawn5 = new Pawn(new LoaderParams(1, square * 4, square));
-	black_pawn6 = new Pawn(new LoaderParams(1, square * 5, square));
-	black_pawn7 = new Pawn(new LoaderParams(1, square * 6, square));
-	black_pawn8 = new Pawn(new LoaderParams(1, square * 7, square));
+	Piece* black_king = new King(new LoaderParams(1, 4 * square, 0));
+	Piece* black_queen = new Queen(new LoaderParams(1, 3 * square, 0));
+	Piece* black_rook = new Rook(new LoaderParams(1, 0, 0));
+	Piece* black_rook2 = new Rook(new LoaderParams(1, 7 * square, 0));
+	Piece* black_bishop = new Bishop(new LoaderParams(1, 2 * square, 0));
+	Piece* black_bishop2 = new Bishop(new LoaderParams(1, 5 * square, 0));
+	Piece* black_knight = new Knight(new LoaderParams(1, square, 0));
+	Piece* black_knight2 = new Knight(new LoaderParams(1, 6 * square, 0));
+	Piece* black_pawn = new Pawn(new LoaderParams(1, 0, square));
+	Piece* black_pawn2 = new Pawn(new LoaderParams(1, square, square));
+	Piece* black_pawn3 = new Pawn(new LoaderParams(1, square * 2, square));
+	Piece* black_pawn4 = new Pawn(new LoaderParams(1, square * 3, square));
+	Piece* black_pawn5 = new Pawn(new LoaderParams(1, square * 4, square));
+	Piece* black_pawn6 = new Pawn(new LoaderParams(1, square * 5, square));
+	Piece* black_pawn7 = new Pawn(new LoaderParams(1, square * 6, square));
+	Piece* black_pawn8 = new Pawn(new LoaderParams(1, square * 7, square));
 
-	white_king = new King(new LoaderParams(0, 4 * square, 7 * square));
-	white_queen = new Queen(new LoaderParams(0, 3 * square, 7 * square));
-	white_rook = new Rook(new LoaderParams(0, 0, 7 * square));
-	white_rook2 = new Rook(new LoaderParams(0, 7 * square, 7 * square));
-	white_bishop = new Bishop(new LoaderParams(0, 2*square, 7 * square));
-	white_bishop2 = new Bishop(new LoaderParams(0, 5 * square, 7 * square));
-	white_knight = new Knight(new LoaderParams(0, square, 7 * square));
-	white_knight2 = new Knight(new LoaderParams(0, 6 * square, 7 * square));
-	white_pawn = new Pawn(new LoaderParams(0, 0, 6 * square));
-	white_pawn2 = new Pawn(new LoaderParams(0, square, 6 * square ));
-	white_pawn3 = new Pawn(new LoaderParams(0, square*2, 6 * square));
-	white_pawn4 = new Pawn(new LoaderParams(0, square * 3, 6 * square));
-	white_pawn5 = new Pawn(new LoaderParams(0, square * 4, 6 * square));
-	white_pawn6 = new Pawn(new LoaderParams(0, square * 5, 6 * square));
-	white_pawn7 = new Pawn(new LoaderParams(0, square * 6, 6 * square));
-	white_pawn8 = new Pawn(new LoaderParams(0, square * 7, 6 * square));
+	Piece* white_king = new King(new LoaderParams(0, 4 * square, 7 * square));
+	Piece* white_queen = new Queen(new LoaderParams(0, 3 * square, 7 * square));
+	Piece* white_rook = new Rook(new LoaderParams(0, 0, 7 * square));
+	Piece* white_rook2 = new Rook(new LoaderParams(0, 7 * square, 7 * square));
+	Piece* white_bishop = new Bishop(new LoaderParams(0, 2 * square, 7 * square));
+	Piece* white_bishop2 = new Bishop(new LoaderParams(0, 5 * square, 7 * square));
+	Piece* white_knight = new Knight(new LoaderParams(0, square, 7 * square));
+	Piece* white_knight2 = new Knight(new LoaderParams(0, 6 * square, 7 * square));
+	Piece* white_pawn = new Pawn(new LoaderParams(0, 0, 6 * square));
+	Piece* white_pawn2 = new Pawn(new LoaderParams(0, square, 6 * square));
+	Piece* white_pawn3 = new Pawn(new LoaderParams(0, square * 2, 6 * square));
+	Piece* white_pawn4 = new Pawn(new LoaderParams(0, square * 3, 6 * square));
+	Piece* white_pawn5 = new Pawn(new LoaderParams(0, square * 4, 6 * square));
+	Piece* white_pawn6 = new Pawn(new LoaderParams(0, square * 5, 6 * square));
+	Piece* white_pawn7 = new Pawn(new LoaderParams(0, square * 6, 6 * square));
+	Piece* white_pawn8 = new Pawn(new LoaderParams(0, square * 7, 6 * square));
 
 	white_pieces.push_back(white_king);
 	white_pieces.push_back(white_queen);
@@ -122,6 +122,40 @@ bool Game::init(const std::string& window_title, int width, int height) {
 	black_pieces.push_back(black_pawn6);
 	black_pieces.push_back(black_pawn7);
 	black_pieces.push_back(black_pawn8);
+
+	white_pos_storage.push_back(new Vector2D(4 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(3 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(0, 7 * square));
+	white_pos_storage.push_back(new Vector2D(7 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(2 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(5 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(6 * square, 7 * square));
+	white_pos_storage.push_back(new Vector2D(0, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 2, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 3, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 4, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 5, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 6, 6 * square));
+	white_pos_storage.push_back(new Vector2D(square * 7, 6 * square));
+
+	black_pos_storage.push_back(new Vector2D(4 * square, 0));
+	black_pos_storage.push_back(new Vector2D(3 * square, 0));
+	black_pos_storage.push_back(new Vector2D(0,0));
+	black_pos_storage.push_back(new Vector2D(7 * square, 0));
+	black_pos_storage.push_back(new Vector2D(2 * square, 0));
+	black_pos_storage.push_back(new Vector2D(5 * square, 0));
+	black_pos_storage.push_back(new Vector2D(square, 0));
+	black_pos_storage.push_back(new Vector2D(6 * square, 0));
+	black_pos_storage.push_back(new Vector2D(0, square));
+	black_pos_storage.push_back(new Vector2D(square , square));
+	black_pos_storage.push_back(new Vector2D(square * 2, square));
+	black_pos_storage.push_back(new Vector2D(square * 3, square));
+	black_pos_storage.push_back(new Vector2D(square * 4, square));
+	black_pos_storage.push_back(new Vector2D(square * 5, square));
+	black_pos_storage.push_back(new Vector2D(square * 6, square));
+	black_pos_storage.push_back(new Vector2D(square * 7, square));
 }
 
 void Game::render()
@@ -157,13 +191,44 @@ void Game::handleEvents() {
 
 void Game::update()
 {
-	for (std::vector<Piece*>::size_type i = 0; i != white_pieces.size(); i++)
-	{
-		white_pieces[i]->update();
+	if (isWhiteMove()) {
+		for (std::vector<Piece*>::size_type i = 0; i != white_pieces.size(); i++)
+		{
+			white_pieces[i]->update();
+			// spradwzenie czy bia³y zrobi³ posuniêcie
+			if (white_pieces[i]->getX()!= white_pos_storage[i]->getX() || white_pieces[i]->getY() != white_pos_storage[i]->getY()) {
+				// tu ogranicz ruch bierek, ¿eby nie mog³y poruszaæ siê na zajête pole przez bierki tego samego koloru
+				white_move = !white_move; 
+				white_pos_storage[i]->setX(white_pieces[i]->getX());
+				white_pos_storage[i]->setY(white_pieces[i]->getY());
+				// sprawdzenie czy nie wyst¹pi³o bicie
+				for (std::vector<Piece*>::size_type j = 1; j != black_pieces.size(); j++) { //od 1, bo król nie mo¿e zostaæ zbity
+					if (white_pieces[i]->getX() == black_pieces[j]->getX() && white_pieces[i]->getY() == black_pieces[j]->getY()) {
+						black_pieces.erase(black_pieces.begin() + j); // usuniêcie zbitej bierki z szachownicy
+						black_pos_storage.erase(black_pos_storage.begin() + j);
+						break;
+					}
+				}
+			}
+		}
 	}
-
-	for (std::vector<Piece*>::size_type i = 0; i != black_pieces.size(); i++)
-	{
-		black_pieces[i]->update();
-	}
+	else
+		for (std::vector<Piece*>::size_type i = 0; i != black_pieces.size(); i++)
+		{
+			black_pieces[i]->update();
+			// sprawdzenie czy czarny zrobi³ posuniêcie
+			if (black_pieces[i]->getX() != black_pos_storage[i]->getX() || black_pieces[i]->getY() != black_pos_storage[i]->getY()) {
+				white_move = !white_move; 
+				black_pos_storage[i]->setX(black_pieces[i]->getX());
+				black_pos_storage[i]->setY(black_pieces[i]->getY());
+				// sprawdzenie czy nie wyst¹pi³o bicie
+				for (std::vector<Piece*>::size_type j = 1; j != white_pieces.size(); j++) { //od 1, bo król nie mo¿e zostaæ zbity
+					if (black_pieces[i]->getX() == white_pieces[j]->getX() && black_pieces[i]->getY() == white_pieces[j]->getY()) {
+						white_pieces.erase(white_pieces.begin() + j); // usuniêcie zbitej bierki z szachownicy
+						white_pos_storage.erase(white_pos_storage.begin() + j);
+						break;
+					}
+				}
+			}
+		}
 }

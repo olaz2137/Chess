@@ -18,7 +18,7 @@ void King::draw(SDL_Renderer* renderer)
 void King::update()
 {
 	Piece::update();
-	// ograncizenie ruchów króla u¿ywaj¹c wektorów
+	// ograncizenie ruchów króla u¿ywaj¹c wektorów poprzedniej i aktualnej pozycji
 	int square = BoardRect::side_len;
 	if (m_prev_position.getX()!= -1 && m_prev_position.getY() != -1  && (abs((m_position-m_prev_position).getX())>square || abs((m_position - m_prev_position).getY()) > square) ) {
 		m_position.setX(m_prev_position.getX());

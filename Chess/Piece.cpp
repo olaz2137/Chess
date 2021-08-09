@@ -6,11 +6,7 @@
 
 
 Piece::Piece(const LoaderParams* params):
-	PieceBase(params), m_position(params->getX(), params->getY()), m_prev_position(-1,-1)
-{
-	m_color = params->getColor();
-	m_texture = params->getTexture();
-}
+	m_position(params->getX(), params->getY()), m_prev_position(-1,-1), m_color(params->getColor()) {}
 
 void Piece::draw(SDL_Renderer* renderer)
 {
@@ -26,10 +22,11 @@ void Piece::update() {
 	if (!TheInputHandler::Instance()->getMouseButtonLeft()) {
 		x = m_position.getX();
 		y = m_position.getY();
-		mx = vec->getX();
-		my = vec->getY();
+		m_x = vec->getX();
+		m_y = vec->getY();
 	}
-	if (TheInputHandler::Instance()->getMouseButtonLeft() && mx > x && mx <x + square && my >y && my < y + square) {
+	// ograniczenie ruchów do pól szachownicy
+	if (TheInputHandler::Instance()->getMouseButtonLeft() && m_x > x && m_x <x + square && m_y >y && m_y < y + square) {
 		m_prev_position.setX(x);
 		m_prev_position.setY(y);
 		for (int i = 0; i < 8; i++) {
@@ -37,6 +34,10 @@ void Piece::update() {
 			if (vec->getY() > i * square && vec->getY() < (i + 1) * square) m_position.setY(i * square);
 		}
 
+	}
+	if (!TheInputHandler::Instance()->getMouseButtonLeft()) {
+//		m_prev_position.setX(x);
+//		m_prev_position.setY(y);
 	}
 }
 

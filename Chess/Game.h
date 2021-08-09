@@ -3,6 +3,13 @@
 #include "SDL.h"
 #include <vector>
 #include "Piece.h"
+#include "BoardRect.h"
+#include "King.h"
+#include "Queen.h"
+#include "Rook.h"
+#include "Bishop.h"
+#include "Knight.h"
+#include "Pawn.h"
 
 /// <summary>
 /// 
@@ -47,7 +54,10 @@ private:
 
 	std::vector <Piece*> white_pieces;
 	std::vector <Piece*> black_pieces;
-	
+
+	std::vector <Vector2D*> white_pos_storage;
+	std::vector <Vector2D*> black_pos_storage;
+
 	Piece* black_king;
 	Piece* black_queen;
 	Piece* black_rook;
