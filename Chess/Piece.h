@@ -5,7 +5,7 @@
 #include "Vector2D.h"
 
 /// <summary>
-/// 
+/// Klasa podstawowa wszystkich bierek
 /// </summary>
 class Piece {
 public:
@@ -15,19 +15,17 @@ public:
 	Vector2D m_prev_position;
 	Vector2D m_position;
 
-	virtual void draw(SDL_Renderer* renderer) = 0;
+	void draw(SDL_Renderer* renderer);
 	virtual void update() = 0;
-//	void promote();
-//	virtual void clean() = 0;
-//	virtual void handleInput();
 
 	int getX() { return x; }
 	int getY() { return y; }
 
-	void setX(int cx) { x = cx; }
-	void setY(int cy) { y = cy; }
+	void setX(int cx) { m_position.setX(cx); }
+	void setY(int cy) { m_position.setY(cy); }
 
-	
+	bool moved = 0;
+	bool checked = 0;
 
 protected:
 	

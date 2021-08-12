@@ -3,6 +3,9 @@
 #include <vector>
 #include "Vector2D.h"
 
+/// <summary>
+/// Obsluga myszki
+/// </summary>
 class InputHandler {
 public:
 	static InputHandler* Instance() {
@@ -12,7 +15,6 @@ public:
 	bool getMouseButtonLeft() { return m_mouseButtonLeft; }
 	Vector2D* getMousePosition() { return m_mousePosition; }
 	void update();
-	void clean();
 
 private:
 

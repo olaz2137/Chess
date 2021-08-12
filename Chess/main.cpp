@@ -12,15 +12,14 @@ int main(int argc, char* argv[]){
 
         frameStart = SDL_GetTicks();
 
+        TheGame::Instance()->render();
         TheGame::Instance()->handleEvents();
         TheGame::Instance()->update();
-        TheGame::Instance()->render();
 
         frameTime = SDL_GetTicks() - frameStart;
 
         if (frameTime < DELAY_TIME) SDL_Delay((int)(DELAY_TIME - frameTime));
     }
-
 
     return 0;
 }

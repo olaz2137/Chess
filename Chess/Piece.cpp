@@ -6,7 +6,7 @@
 
 
 Piece::Piece(const LoaderParams* params):
-	m_position(params->getX(), params->getY()), m_prev_position(-1,-1), m_color(params->getColor()) {}
+	m_position(params->getX(), params->getY()), m_prev_position(params->getX(), params->getY()), m_color(params->getColor()) {}
 
 void Piece::draw(SDL_Renderer* renderer)
 {
@@ -34,10 +34,6 @@ void Piece::update() {
 			if (vec->getY() > i * square && vec->getY() < (i + 1) * square) m_position.setY(i * square);
 		}
 
-	}
-	if (!TheInputHandler::Instance()->getMouseButtonLeft()) {
-//		m_prev_position.setX(x);
-//		m_prev_position.setY(y);
 	}
 }
 

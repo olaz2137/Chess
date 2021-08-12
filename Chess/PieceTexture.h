@@ -1,9 +1,11 @@
 #pragma once
 #include "SDL.h"
 
+/// <summary>
+/// Tekstury bierek
+/// </summary>
 class PieceTexture {
 public:
-
 	~PieceTexture();
 
 	static SDL_Texture* wp_texture; //white pawn itd.
@@ -19,5 +21,8 @@ public:
 	static SDL_Texture* wk_texture;
 	static SDL_Texture* bk_texture;
 
+	/// <summary>
+	/// Tworzenie tekstur i ladowanie ich do rendera
+	/// </summary>
 	static void loadImages();
 };

@@ -6,11 +6,5 @@ public:
 	
 	King(const LoaderParams* params);
 
-	void draw(SDL_Renderer* renderer);
 	void update();
-	
-//	void clean();
-
-private:
-//	void handleInput();
 };
